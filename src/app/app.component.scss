@@ -45,7 +45,7 @@
         form {
             display: flex;
             justify-content: center;
-            align-items: center;
+            // align-items: center;
 
             @include for-desktop-up {
                 display: block;
@@ -53,8 +53,11 @@
         }
 
         &__button {
-            margin: 20px;
-            margin-top: 4px;
+            margin-left: 20px;
+
+            button {
+                height: 51px;
+            }
         }
     }
 
