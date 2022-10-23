@@ -66,12 +66,17 @@ export class AppComponent {
     this.showSpinner = true;
 
     const bodyRequest = {
-      type: this.isChecked == true ? "url" : "text",
+      type: "url",
       url: this.formAnalize.value.url
     }
 
-    console.log(bodyRequest)
-    this._services.getAnalize(bodyRequest).subscribe( (data) => {
+    const bodyRequest2 = {
+      type: "text",
+      text: this.formAnalize.value.url
+    }
+
+    
+    this._services.getAnalize(this.isChecked == true ? bodyRequest : bodyRequest2).subscribe( (data) => {
       this.data = data.result
       console.log(data.result)
       this.showSpinner = false;
